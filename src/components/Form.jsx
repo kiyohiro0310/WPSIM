@@ -59,48 +59,11 @@ export function Form() {
   );
 }
 
+// TODO: Kiyo will create generate form function
 // 1. Create function for generate form
 // This form parameter should be array
 // This methid create form on basis of parameters
 // How to use => generateForm.apply(this, array);
 export function generateForm(...args) {
-  // This formik is for sample
 
-  return (
-    <form
-      onSubmit={args.formik.handleSubmit}
-      className="shadow-lg rounded-md p-3 w-1/2 mx-auto justify-center items-center"
-    >
-
-      {/* <InputField
-        label="Email"
-        value={args.formik.values.email}
-        id="email"
-        type="email"
-        formik={args.formik}
-      />
-      <InputField
-        label="Age"
-        value={args.formik.values.age}
-        id="age"
-        type="number"
-        formik={args.formik}
-      />
-      <InputField
-        label="Password"
-        value={args.formik.values.password}
-        id="password"
-        type="password"
-        formik={args.formik}
-      />
-      <InputField
-        label="Confirm Password"
-        value={args.formik.values.confirmPassword}
-        id="confirmPassword"
-        type="password"
-        formik={args.formik}
-      /> */}
-      <SubmitButton />
-    </form>
-  );
 }

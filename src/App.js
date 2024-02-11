@@ -16,8 +16,8 @@ function App() {
   return (
     <Fragment>
       <div className='container mx-auto flex p-12'>
-        {/* <Form /> */}
-        {generateForm([{label: "Email", type: "email", id: "email", value: "email"}])}
+        <Form />
+        {/* {generateForm([{label: "Email", type: "email", id: "email", value: "email"}])} */}
       </div>
     </Fragment>
   );
