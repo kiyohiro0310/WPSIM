@@ -1,23 +1,30 @@
 import { Fragment } from 'react';
-import { Form, generateForm } from './components/Form';
+import { generateForm } from './components/Form';
 import { useFormik } from "formik";
 import { basicSchema } from "./schemas";
 
+const onSubmit = () => {
+  console.log("Submitted")
+}
 function App() {
   const userFormik = useFormik({
     initialValues: {
-      email: "",
-      age: 0,
-      password: "",
-      confirmPassword: ""
+      firstName: "",
+      lastName: ""
     },
     validationSchema: basicSchema,
+    onSubmit
   });
+  console.log(userFormik.errors);
   return (
     <Fragment>
       <div className='container mx-auto flex p-12'>
-        <Form />
-        {/* {generateForm([{label: "Email", type: "email", id: "email", value: "email"}])} */}
+        {/* // How to use => generateForm.apply(this, fields: array, formik); */}
+        {/* id and formik name must be same*/}
+        {generateForm([
+          {label: "First Name", type: "text", id: "firstName"},
+          {label: "Last Name", type: "text", id: "lastName"},
+          ], userFormik)}
       </div>
     </Fragment>
   );
