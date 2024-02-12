@@ -33,7 +33,7 @@ export function generateForm(...args) {
             formik={args[1]}
           />
         );
-        else <p>Other input fields will come here</p>
+        else return <p>Other input fields will come here</p>
       })}
       <SubmitButton />
     </form>

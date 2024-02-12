@@ -6,7 +6,7 @@ import * as yup from "yup";
 // TODO: https://westernsydneyedu.sharepoint.com/:x:/r/sites/WPMISProject/Shared%20Documents/Documentation/Updated%202024%20Documentation/Technical%20Requirements/Input%20Validation%20Standards.xlsx?d=wbf33d67bc4794bf189b7f4ea8d0e227c&csf=1&web=1&e=EvuxgQ
 // Start date should be past, end date should be future
 // domain emal => @student.western, staff: @westernsydney
-const passwordRules = /&^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5.}$/;
+// const passwordRules = /&^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5.}$/;
 
 export const basicSchema = yup.object().shape({
     firstName: yup.string().required(),
