@@ -31,6 +31,7 @@ function App() {
             { label: "First Name", type: "text", id: "firstName" },
             { label: "Last Name", type: "text", id: "lastName" },
             { label: "Age", type: "number", id: "age" },
+            { label: "Dropdown", type: "dropdown", id: "dropdown" },
           ]}
           formik={userFormik}
         />
