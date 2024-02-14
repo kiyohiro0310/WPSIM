@@ -27,7 +27,7 @@ export function generateForm(...args) {
             <InputField
               key={index}
               label={item.label}
-              value={formik.values.item.id}
+              value={formik.values[item.id]}
               id={item.id}
               type={item.type}
               formik={args[1]}
