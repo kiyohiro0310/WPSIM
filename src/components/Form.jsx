@@ -22,7 +22,9 @@ export function generateForm(...args) {
     >
       {args[0].map((item, index) => {
         // If type is not date or input field is not dropdown return text input field
-        if (item.type !== "date")
+
+        if (item.type === "dropdown") return <p>Return dropdown input field</p>;
+        else
           return (
             <InputField
               key={index}
@@ -33,12 +35,14 @@ export function generateForm(...args) {
               formik={args[1]}
             />
           );
+
         else return (
           <DropdownInputField 
             
           
           />
         );
+
       })}
       <SubmitButton />
     </form>
