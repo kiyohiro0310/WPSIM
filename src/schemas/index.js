@@ -11,6 +11,7 @@ import * as yup from "yup";
 export const basicSchema = yup.object().shape({
     firstName: yup.string().required(),
     lastName: yup.string().required(),
+    age: yup.number().required(),
     // email: yup.string().email("Please enter a valid email").required(),
     // age: yup.number().positive().integer().required("Required"),
     // password: yup.string().min(8).matches(passwordRules, {message: "Please create a stronger password"}).required(),
