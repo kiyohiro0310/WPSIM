@@ -16,6 +16,7 @@ const internationalRules = /^[0-9()+\- ]+$/;
 const domesticRules = /^(?:\+61|02|03|07|08|04|05)[0-9]{8}$/;
 
 export const basicSchema = yup.object().shape({
+
     //email: yup.string().email("Please enter a valid email").required(),
     //age: yup.number().positive().integer().required("Required"),
     //password: yup.string().min(8).matches(passwordRules, {message: "Please create a stronger password"}).required(),
@@ -70,4 +71,5 @@ export const basicSchema = yup.object().shape({
                                       .required("This field is required!!"),
     startDate: Yup.date().required("This field is required!!"),
     endDate: Yup.date().min(Yup.ref('startDate'), "End date cannot be before Start date").required("This field is required!!"),
+
 });
