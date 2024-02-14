@@ -23,6 +23,7 @@ function App() {
   });
   return (
     <Fragment>
+
       <div className="container mx-auto flex p-12">
         <GenerateForm
           fields={[
@@ -32,6 +33,7 @@ function App() {
           ]}
           formik={userFormik}
         />
+
       </div>
     </Fragment>
   );

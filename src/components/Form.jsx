@@ -1,6 +1,7 @@
 import React from "react";
 import InputField from "./InputComponents/InputField";
 import SubmitButton from "./Buttons/SubmitButton";
+import DropdownInputField from "./InputComponents/DropdownInputField";
 
 // TODO: Kiyo will create generate form function
 // 1. Create function for generate form
@@ -11,7 +12,7 @@ import SubmitButton from "./Buttons/SubmitButton";
 
 export function GenerateForm({fields, formik}) {
   return (
-    generateForm(fields, formik)
+    generateForm(fields, formik);
   );
 
 }
