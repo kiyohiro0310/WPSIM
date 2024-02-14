@@ -5,7 +5,6 @@ import SubmitButton from "./Buttons/SubmitButton";
 // Create function to make form
 // parameters should be array
 
-
 // TODO: Kiyo will create generate form function
 // 1. Create function for generate form
 // This form parameter should be array
@@ -22,18 +21,18 @@ export function generateForm(...args) {
     >
       {args[0].map((item, index) => {
         // If type is not date or input field is not dropdown return text input field
-        if (item.type !== "date" )
-        return (
-          <InputField
-            key={index}
-            label={item.label}
-            value={formik.values.id}
-            id={item.id}
-            type={item.type}
-            formik={args[1]}
-          />
-        );
-        else return <p>Other input fields will come here</p>
+        if (item.type === "dropdown") return <p>Return dropdown input field</p>;
+        else
+          return (
+            <InputField
+              key={index}
+              label={item.label}
+              value={formik.values[item.id]}
+              id={item.id}
+              type={item.type}
+              formik={args[1]}
+            />
+          );
       })}
       <SubmitButton />
     </form>
