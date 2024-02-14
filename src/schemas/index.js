@@ -1,12 +1,6 @@
 import * as yup from "yup";
 
-
-// TODO: Naga create schema for input field validation
-// TODO: Please refer this documentdation when implementing
-// TODO: https://westernsydneyedu.sharepoint.com/:x:/r/sites/WPMISProject/Shared%20Documents/Documentation/Updated%202024%20Documentation/Technical%20Requirements/Input%20Validation%20Standards.xlsx?d=wbf33d67bc4794bf189b7f4ea8d0e227c&csf=1&web=1&e=EvuxgQ
-// Start date should be past, end date should be future
-// domain emal => @student.western, staff: @westernsydney
-const passwordRules = /&^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5.}$/;
+// const passwordRules = /&^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5.}$/;
 const nameRules = /^(?!.*  )[a-zA-Z]+(?:['. -][a-zA-Z]+)*$/;
 const titleRules = /^(?!.*  )[a-zA-Z]+(?:[' -][a-zA-Z]+)*$/;
 const studentEmailRules =/^(?!\.)(?!.*\.\.)(?!.*\.@)[a-zA-Z0-9_.+-]+@student\.westernsydney\.edu\.au$/;
@@ -15,12 +9,27 @@ const companyEmailRules = /^(?!\.)(?!.*\.\.)(?!.*\.@)[a-zA-Z0-9_.+-]+@[a-zA-Z0-9
 const internationalRules = /^[0-9()+\- ]+$/;
 const domesticRules = /^(?:\+61|02|03|07|08|04|05)[0-9]{8}$/;
 
+// Example
+export const sampleSchema = yup.object().shape({
+    firstName: yup.string().min(1)
+                           .max(100,{message:"Exceeded limit of 100 characters"})
+                           .matches(nameRules,{message:"Please enter valid first name"})
+                           .required("This field is required!!"),
+    lastName: yup.string().min(1)
+                            .max(100,{message:"Exceeded limit of 100 characters"})
+                            .matches(nameRules,{message:"Please enter valid last name"})
+                            .required("This field is required!!"),
+    position: yup.string().min(1)
+                            .max(100,{message:"Exceeded limit of 100 characters"})
+                            .matches(titleRules,{message:"Please enter valid position"})
+                            .required("This field is required!!"),
+    dropdown: yup.string().required("This field is required!")
+});
+
+
+// TODO: Please use below schema to create your required schema
 export const basicSchema = yup.object().shape({
 
-    //email: yup.string().email("Please enter a valid email").required(),
-    //age: yup.number().positive().integer().required("Required"),
-    //password: yup.string().min(8).matches(passwordRules, {message: "Please create a stronger password"}).required(),
-    //comfirmPassword: yup.string().oneOf([yup.ref('password'), null], "Passwords mush match"),
     firstName: yup.string().min(1)
                            .max(100,{message:"Exceeded limit of 100 characters"})
                            .matches(nameRules,{message:"Please enter valid first name"})
