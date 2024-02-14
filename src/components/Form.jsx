@@ -24,7 +24,24 @@ export function generateForm(...args) {
       >
         {args[0].map((item, index) => {
           // If type is not date or input field is not dropdown return text input field
-          if (item.type === "dropdown") return <p>Return dropdown input field</p>;
+          if (item.type === "dropdown")
+          return (
+            <DropdownInputField
+              key={index}
+              label="Dropdown"
+              value={formik.values[item.id]}
+              id={item.id}
+              // ottions={item.option}
+              options={[
+                { value: "1", label: "Option 1" },
+                { value: "2", label: "Option 2" },
+                { value: "3", label: "Option 3" },
+                { value: "4", label: "Option 4" },
+                { value: "5", label: "Option 5" },
+              ]}
+              formik={args[1]}
+            ></DropdownInputField>
+          );
           else
             return (
               <InputField
