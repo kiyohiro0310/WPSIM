@@ -24,6 +24,7 @@ function App() {
         {generateForm([
           {label: "First Name", type: "text", id: "firstName"},
           {label: "Last Name", type: "text", id: "lastName"},
+          {label: "Drop down", type: "dropdown", id: "dropdown"},
           ], userFormik)}
       </div>
     </Fragment>
