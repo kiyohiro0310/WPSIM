@@ -1,6 +1,7 @@
 import React from "react";
 import InputField from "./InputComponents/InputField";
 import SubmitButton from "./Buttons/SubmitButton";
+import DropdownInputField from "./InputComponents/DropdownInputField";
 
 // Create function to make form
 // parameters should be array
@@ -21,6 +22,7 @@ export function generateForm(...args) {
     >
       {args[0].map((item, index) => {
         // If type is not date or input field is not dropdown return text input field
+
         if (item.type === "dropdown") return <p>Return dropdown input field</p>;
         else
           return (
@@ -33,6 +35,14 @@ export function generateForm(...args) {
               formik={args[1]}
             />
           );
+
+        else return (
+          <DropdownInputField 
+            
+          
+          />
+        );
+
       })}
       <SubmitButton />
     </form>

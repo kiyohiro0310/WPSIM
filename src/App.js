@@ -25,7 +25,7 @@ function App() {
         {generateForm([
           {label: "First Name", type: "text", id: "firstName"},
           {label: "Last Name", type: "text", id: "lastName"},
-          {label: "Age", type: "number", id: "age"},
+
           ], userFormik)}
       </div>
     </Fragment>
