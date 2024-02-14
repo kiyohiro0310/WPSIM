@@ -31,6 +31,7 @@ export function generateForm(...args) {
               label="Dropdown"
               value={formik.values[item.id]}
               id={item.id}
+              // otions field should be input as item.options
               // ottions={item.option}
               options={[
                 { value: "1", label: "Option 1" },
