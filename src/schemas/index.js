@@ -69,7 +69,7 @@ export const basicSchema = yup.object().shape({
     keyResponsibilities: yup.string().min(1)
                                       .max(4000,{message:"Exceeded limit of 4000 characters"})
                                       .required("This field is required!!"),
-    startDate: Yup.date().required("This field is required!!"),
-    endDate: Yup.date().min(Yup.ref('startDate'), "End date cannot be before Start date").required("This field is required!!"),
+    startDate: yup.date().required("This field is required!!"),
+    endDate: yup.date().min(yup.ref('startDate'), "End date cannot be before Start date").required("This field is required!!"),
 
 });

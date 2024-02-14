@@ -5,6 +5,7 @@ import { basicSchema } from "./schemas";
 
 const onSubmit = (values, actions) => {
   // Send value to backend
+  console.log("You've submitted.");
   console.log(values);
 
   actions.resetForm();
