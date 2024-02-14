@@ -1,7 +1,6 @@
 import React from "react";
 
 export default function SubmitButton({ formik }) {
-  console.log(formik.isSubmitting);
   return (
     <button
       type="submit"
