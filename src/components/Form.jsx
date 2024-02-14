@@ -7,9 +7,6 @@ import DropdownInputField from "./InputComponents/DropdownInputField";
 // 1. Create function for generate form
 // This form parameter should be array
 // This methid create form on basis of parameters
-
-
-
 export function GenerateForm({fields, formik}) {
   return (
     generateForm(fields, formik);
@@ -20,7 +17,6 @@ export function GenerateForm({fields, formik}) {
 export function generateForm(...args) {
     // 1. Get formik
     const formik = args[1];
-    console.log(formik);
     return (
       <form
         onSubmit={formik.handleSubmit}
