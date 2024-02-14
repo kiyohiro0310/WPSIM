@@ -9,7 +9,7 @@ import DropdownInputField from "./InputComponents/DropdownInputField";
 // This methid create form on basis of parameters
 export function GenerateForm({fields, formik}) {
   return (
-    generateForm(fields, formik);
+    generateForm(fields, formik)
   );
 
 }
