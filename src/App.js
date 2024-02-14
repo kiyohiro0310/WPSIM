@@ -10,7 +10,8 @@ function App() {
   const userFormik = useFormik({
     initialValues: {
       firstName: "",
-      lastName: ""
+      lastName: "",
+      age: 0
     },
     validationSchema: basicSchema,
     onSubmit
@@ -24,6 +25,7 @@ function App() {
         {generateForm([
           {label: "First Name", type: "text", id: "firstName"},
           {label: "Last Name", type: "text", id: "lastName"},
+          {label: "Age", type: "number", id: "age"},
           ], userFormik)}
       </div>
     </Fragment>
