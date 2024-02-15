@@ -1,13 +1,11 @@
 import { Fragment } from "react";
 import { GenerateForm } from "./components/Form";
 import { useFormik } from "formik";
-import { sampleSchema } from "./schemas";
+import { anotherSchema, sampleSchema } from "./schemas";
 
 const onSubmit = (values, actions) => {
-  // Send value to backend
   console.log("You've submitted successfully.");
   console.log(values);
-
   actions.resetForm();
 };
 
@@ -40,8 +38,30 @@ function App() {
     validationSchema: sampleSchema,
 
     // 2-3. Create your submit handler method and set here
-    onSubmit,
+    onSubmit: onSubmit,
   });
+
+  const anotherInputFields = [
+    {label: "First name", type: "text", id:"firstName"},
+    {label: "Last name", type: "text", id:"lastName"},
+    {label: "Job title", type: "dropdown",
+    options:[
+      {label: "Student", value: "student"},
+      {label: "Staff", value: "staff"},
+      {label: "Student", value: "student"},
+    ],
+    id:"jobTitle"},
+  ]
+
+  const anotherFormik = useFormik({
+    initialValues: {
+      firstName: "",
+      lastName: "",
+      jobTitle: ""
+    },
+    validationSchema: anotherSchema,
+    onSubmit
+  })
 
   return (
     <Fragment>
@@ -50,7 +70,7 @@ function App() {
           fields={inputFields}
           formik={userFormik}
         />
-
+        <GenerateForm fields={anotherInputFields} formik={anotherFormik}/>
       </div>
     </Fragment>
   );

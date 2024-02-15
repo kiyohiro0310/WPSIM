@@ -26,6 +26,21 @@ export const sampleSchema = yup.object().shape({
     dropdown: yup.string().required("This field is required!")
 });
 
+export const anotherSchema = yup.object().shape({
+    firstName: yup.string().min(1)
+                           .max(100,{message:"Exceeded limit of 100 characters"})
+                           .matches(nameRules,{message:"Please enter valid first name"})
+                           .required("This field is required!!"),
+    lastName: yup.string().min(1)
+                            .max(100,{message:"Exceeded limit of 100 characters"})
+                            .matches(nameRules,{message:"Please enter valid last name"})
+                            .required("This field is required!!"),
+    jobTitle: yup.string().min(1)
+                            .max(100,{message:"Exceeded limit of 100 characters"})
+                            .matches(titleRules,{message:"Please enter valid job title"})
+                            .required("This field is required!!"),
+});
+
 
 // TODO: Please use below schema to create your required schema
 export const basicSchema = yup.object().shape({
