@@ -1,8 +1,8 @@
 import * as yup from "yup";
 
 
-const nameRules = /^(?!.*  )[a-zA-Z]+(?:['. -][a-zA-Z]+)*$/;
-const titleRules = /^(?!.*  )[a-zA-Z]+(?:[' -][a-zA-Z]+)*$/;
+const nameRules = /^(?!.* {2})[a-zA-Z]+(?:['. -][a-zA-Z]+)*$/;
+const titleRules = /^(?!.* {2})[a-zA-Z]+(?:[' -][a-zA-Z]+)*$/;
 const studentEmailRules =
   /^(?!\.)(?!.*\.\.)(?!.*\.@)[a-zA-Z0-9_.+-]+@student\.westernsydney\.edu\.au$/;
 const staffEmailRules =
