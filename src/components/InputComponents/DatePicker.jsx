@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function InputField({ label, value, id, type, formik, b_error }) {
+export default function DatePicker({ label, value, id, formik, b_error }) {
   return (
     <div className="flex flex-col">
       <label htmlFor={id} className="text-xl font-bold">
@@ -12,7 +12,7 @@ export default function InputField({ label, value, id, type, formik, b_error }) 
             ? "border-red-600 border-2 rounded-md p-3 mb-2"
             : "border-2 rounded-md p-3 mb-2"
         }
-        type={type}
+        type="date"
         id={id}
         value={value}
         onChange={formik.handleChange}
@@ -25,7 +25,7 @@ export default function InputField({ label, value, id, type, formik, b_error }) 
             formik.errors[id].slice(1)}
         </p>
       )}
-      {b_error && (
+      {b_error && formik.touched[id] && (
         <p className="text-red-600 mb-2">
           {b_error.charAt(0).toUpperCase() +
             b_error.slice(1)}
